@@ -14,6 +14,7 @@ module Sendbird
       end
 
       def update(user_id, body, upsert=false)
+        body["upsert"] = upsert if upsert
         put(path: build_url(user_id, suffix), body: body)
       end
     end
