@@ -138,6 +138,19 @@ describe Sendbird::GroupChannelApi do
       expect(request.body).to eq({})
     end
   end
+
+  context 'Join' do
+    let(:request) do
+      create_dynamic_cassette("#{described_class}/join") do
+        described_class.join(CHANNEL_URL, user_id: 'sam')
+      end
+    end
+
+    it 'will make the user join the group' do
+      expect(request.body).to eq({})
+    end
+  end
+
   #
   # context 'Ban View' do
   #   let(:request) do
