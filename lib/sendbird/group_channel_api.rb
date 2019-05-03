@@ -43,6 +43,10 @@ module Sendbird
       def leave(channel_url, body)
         put(path: build_url(channel_url, 'leave'), body: body)
       end
+
+      def join(channel_url, body)
+        put(path: build_url(channel_url, 'join'), body: body)
+      end
     end
   end
 end
