@@ -21,6 +21,10 @@ module Sendbird
         delete(path: build_url(channel_type, channel_url, 'messages', message_id))
       end
 
+      def update(channel_type, channel_url, message_id, body)
+        put(path: build_url(channel_type, channel_url, 'messages', message_id), body: body)
+      end
+
       def mark_as_read(channel_type, channel_url, body)
         put(path: build_url(channel_type, channel_url, 'messages', 'mark_as_read'), body: body)
       end
